@@ -1,0 +1,79 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Untitled Document</title>
+<style>
+	.clr{ clear:both; font-size:1px; height:1px;}
+	ul, ul li{ margin:0; padding:0; list-style-type:none}
+	.slideBox{border:10px solid #000; position:absolute;}
+	.slideList{float:left; position:relative;}
+	.slideList li{float:left; text-align:center; }
+	.slideList li img{} 
+</style>
+<script src="../jq.js" type="text/javascript" language="javascript"></script>
+<script>
+$(document).ready(function(){
+	var sw =$('#slideList li').outerWidth(); 
+	var sh = $('#slideList li').height();
+	var swl  = $('#slideList li').length;
+	var tw  = sw * swl;
+		$('#slideList').width(tw);
+		$('#slideBox').css({
+			width:sw
+			});
+		$('.prev').hide();
+		var cw = tw-sw;			
+		/**********/
+		$('.next').click(function(){
+		var sl =$('#slideList')
+		var position = sl.position().left;
+		alert(position);
+		alert(cw);
+		$('#slideList').animate({
+			left: position-sw,
+			}, 500);
+				if(cw == (-position+sw) ){$('.next').hide();}
+				else{$('.prev').show();}
+			});
+
+		
+	$('.prev').click(function(){
+		var sl =$('#slideList')
+		var position = sl.position().left;
+			alert('position' + position);
+			//alert('xxx' + cw);
+			$('#slideList').animate({
+					//opacity: 0.25,
+					left: position+sw,
+				  }, 500);
+				if((position+sw) >= 0){$('.prev').hide();}
+				else{$('.next').show();}
+		});
+	});
+
+</script>
+</head>
+<body>
+<a href="#" class="prev">Prev</a>
+<a href="#" class="next">Next</a>
+<div class="slideBox" id="slideBox">
+<div  class="slideList" id="slideList">
+	<ul>
+    	<li><img src="1.gif" width="185" height="103" /></li>
+    	<li><img src="2.gif" width="185" height="103" /></li>
+    	<li><img src="3.gif" width="185" height="103" /></li>
+    	<li><img src="4.gif" width="185" height="103" /></li>
+    	<li><img src="1.gif" width="185" height="103" /></li>
+    	<li><img src="2.gif" width="185" height="103" /></li>
+    	<li><img src="3.gif" width="185" height="103" /></li>
+    	<li><img src="4.gif" width="185" height="103" /></li>
+    	<li><img src="1.gif" width="185" height="103" /></li>
+    	<li><img src="2.gif" width="185" height="103" /></li>
+    	<li><img src="3.gif" width="185" height="103" /></li>
+    	<li><img src="4.gif" width="185" height="103" /></li>
+    </ul>
+   </div> 
+</div>
+</body>
+</html>

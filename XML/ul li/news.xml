@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<news-list>
+<news>
+    <img-src>/store/images/au/lexisnexis.png</img-src>
+    <news-title>View the latest Practical Guidance Module - Work Health and Safety Law</news-title>
+    <news-url>http://www.lexisnexis.com.au/practicalguidance/workhealth-and-safety/default.aspx</news-url>
+</news>           
+
+<news>
+    <img-src>/store/images/au/twitter.png</img-src>
+    <news-title>PCLaw Plus - Practice management software for small law firms</news-title>
+    <news-url>http://www.lexisnexis.com.au/en-au/products/pclaw-plus.page</news-url>
+</news>
+</news-list>

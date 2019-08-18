@@ -1,0 +1,63 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Untitled Document</title>
+<script src="../jq.js" language="javascript" type="text/javascript"></script>
+<script type="text/javascript">
+jQuery(function(){
+        $(".btninp").live('keyup', function(){                                         
+        
+		$(".error").hide();
+        var hasError = false;
+        var passwordVal = $("#password").val();
+        var checkVal = $("#password-check").val();
+		
+        if (passwordVal == '' && checkVal == '' ) {
+            $("#password").after('<span class="error">Please enter a password.</span>');
+            hasError = true;
+        } 
+		
+       else if (passwordVal == '') {
+            $("#password").after('<span class="error">Please enter a password.</span>');
+            hasError = true;
+        } 
+
+		else if (checkVal == '') {
+            $("#password-check").after('<span class="error">Please re-enter your password.</span>');
+            hasError = true;
+        }
+		
+		else if (passwordVal != checkVal ) {   
+            $("#password-check").after('<span class="error">Passwords do not match.</span>');
+            hasError = true;
+        }
+		
+        if(hasError == true) { return false; }
+		else {
+			$(".btninp").after('<span class="error">Passwords accepted.</span>');
+			return false;
+			}
+	});	
+});
+</script>
+<style>
+p label, p input{float:left;}
+.error{float:left; font:normal 11px arial; color:#f00;}
+</style>
+
+</head>
+
+<body>
+<form method="post" name="form1" id="form-password" action="">
+  <fieldset>
+    <p><label>Password:</label>
+    <input type="input" name="password" id="password" value="" size="32" class="btninp" /></p>
+    <div style="clear:both"></div>
+    <p><label>Re-Enter Password:</label>
+    <input type="input" name="password-check" id="password-check" value="" size="32" class="btninp" /></p>
+
+  </fieldset>
+</form>
+</body>
+</html>

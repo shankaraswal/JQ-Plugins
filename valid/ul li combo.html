@@ -1,0 +1,67 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Untitled Document</title>
+<style>
+body{font:normal 11px arial;}
+.selectBox{ width:150px; border:1px solid #967756;}
+p, ul, ul li{ padding:2px 5px; margin:0; list-style-type:none;}
+ul{border-top:1px solid #967756;}
+.floatR{ float:right;}
+.dispNone{display:none;}
+.dispBlock{display:block}
+</style>
+<script>
+	function selectCombo(){
+		var lbl = document.getElementById('list').className;
+		
+		
+		if(lbl == 'dispNone'){
+			document.getElementById('list').className='dispBlock';
+			
+			}
+		else{
+			document.getElementById('list').className='dispNone';
+			}
+		}
+		
+		function optVal(e){
+	
+				var dd = e.innerHTML ;
+				
+				//alert(dd);
+				
+				document.getElementById('selVal').innerHTML=dd;
+				document.getElementById('ab').value=dd;
+				
+				document.getElementById('list').className='dispNone';
+		
+				}	
+		
+	
+		
+</script>
+</head>
+<body>
+<div class="selectBox">
+<p onclick="selectCombo();">
+	<span id="selVal">Select...</span><img src="icn-arw.gif" width="12" height="12" alt="Select" class="floatR" />
+
+ </p>
+
+
+<ul class="dispNone" id="list">
+	<li onclick="optVal(this);">111111</li>
+    <li onclick="optVal(this);">222</li>
+    <li onclick="optVal(this);">333</li>
+    <li onclick="optVal(this);">4444</li>
+    <li onclick="optVal(this);">555</li>
+    <li onclick="optVal(this);">6666</li>
+    <li onclick="optVal(this);">7777</li>
+</ul>
+</div>
+<input type="input" id="ab" name="ab" value="eee "  />   
+
+</body>
+</html>

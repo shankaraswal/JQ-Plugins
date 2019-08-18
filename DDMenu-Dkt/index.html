@@ -1,0 +1,74 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>JQ Drop Down Menu</title>
+<style>
+ul, ul li{padding:0; margin:0; list-style-type:none;}
+ul.nav > li{float:left; background:#ccc; margin:2px;}
+	ul.nav > li > a{padding:5px 10px; display:block; text-decoration:none; text-align:left; width:150px;}
+	ul.nav > li > ul{background:#fff; display:none; background:#eee; border:1px solid #ccc}
+	ul.nav > li > ul li{border-bottom:1px solid #ccc; padding:1px 10px;}
+</style>
+<script src="../jq.js" language="javascript" type="text/javascript"></script>
+<script>
+
+ $(document).ready(function() {
+
+  $('ul.nav > li').hover(function(){
+		 	 $(this).css({'background':'#333'}).find('a').css({'color':'#fff'});
+			 $(this).find('ul').slideDown();
+         	}, 
+         function (){
+			$('ul.nav > li').css({'background':'#ccc'}).find('a').css({'color':'#333'});
+           $('ul.nav ul').slideUp();
+         });
+
+   });
+ 
+ 
+</script>
+</head>
+<body>
+<ul class="nav">
+	<li><a href="#">1111</a>
+    	<ul>
+        	<li>a1</li>
+        	<li>a2</li>
+        	<li>a3</li>
+        	<li>a4</li>
+        </ul>
+    </li>
+	<li><a href="#">222</a>
+    <ul>
+        	<li>a1</li>
+        	<li>a2</li>
+        	<li>a3</li>
+        	<li>a4</li>
+        </ul>
+        </li>
+	<li><a href="#">333</a>
+    <ul>
+        	<li>a1</li>
+        	<li>a2</li>
+        	<li>a3</li>
+        	<li>a4</li>
+        </ul>
+        </li>
+	<li><a href="#">4444</a><ul>
+        	<li>a1</li>
+        	<li>a2</li>
+        	<li>a3</li>
+        	<li>a4</li>
+        </ul>
+        </li>
+	<li><a href="#">555</a>
+    <ul>
+        	<li>a1</li>
+        	<li>a2</li>
+        	<li>a3</li>
+        	<li>a4</li>
+        </ul></li>
+</ul>
+</body>
+</html>

@@ -1,0 +1,14 @@
+@charset "utf-8";
+/* CSS Document */
+body{background:#f2f2f2;font:normal 12px arial; color:#333;}
+.clr{clear:both; font-size:1px;}
+ul,ul li{ padding:0; margin:0; list-style-type:none;}
+
+.mainContainer{ width:500px; border:0px solid green; margin:0 auto;}
+
+	.tabs{}
+	.tabs li{ float:left; margin-right:10px; background:#333}	
+	.tabs li a{font:bold 12px tahoma; color:#fff; text-decoration:none;display:block; padding:5px 15px;}	
+	.tabs li.act{ float:left; margin-right:10px; background:#f00}	
+	.cont{background: #fff; padding:20px; border:1px solid #ccc;}
+	

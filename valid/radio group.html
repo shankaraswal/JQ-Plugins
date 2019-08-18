@@ -1,0 +1,63 @@
+<html>
+<head>
+<title>Checking a Radio Button Group</title>
+<script language="javascript" type="text/javascript">
+<!--//
+
+function evalGroup(){
+	var xx = document.getElementsByName('radioG1');
+	var yy = document.getElementsByName('radioG2');
+
+	for(i=0; i<xx.length;i++){
+		if(xx[i].checked)
+			break;
+			}
+
+	for(j=0; j<yy.length;j++){
+		if(yy[j].checked)
+			break;
+			}
+	if(i==xx.length && j==yy.length){
+		alert('please select from both groups');
+		}
+
+	if(i==xx.length && j!=yy.length){
+		alert('please select from group 1');
+		}
+		
+	if(i!=xx.length && j==yy.length){
+		alert('please select from group 22');
+		}
+
+		else{
+			document.getElementById('abc').innerHTML=(xx[i].value);
+			}
+		}
+
+//-->
+</script>
+</head>
+<body>
+<h1>Checking a Radio Button Group</h1>
+<table width="200" border="1" cellspacing="0" cellpadding="0">
+  <tr>
+    <td>Radio Button 1:</td>
+    <td><input type="radio" value="111" name="radioG1" /></td>
+  </tr>
+  <tr>
+    <td> Radio Button 2:</td>
+    <td><input type="radio" value="222" name="radioG1" /></td>
+  </tr>
+  <tr>
+    <td bgcolor="#999999">Radio Button 1:</td>
+    <td bgcolor="#999999"><input type="radio" value="333" name="radioG2" /></td>
+  </tr>
+  <tr>
+    <td bgcolor="#999999"> Radio Button 2:</td>
+    <td bgcolor="#999999"><input type="radio" value="444" name="radioG2" /></td>
+  </tr>
+</table>
+<input type="button" value="Eval Group" onClick="evalGroup()" />
+<div id="abc" style="border:1px solid #f00; height:50px; width:300px; margin-top:20px;"></div>
+</body>
+</html>

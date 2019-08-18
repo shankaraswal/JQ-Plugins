@@ -1,0 +1,116 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Untitled Document</title>
+<style>
+table {
+	border-collapse:collapse;
+}
+td {
+	border:1px solid #000;
+	padding:10px;
+}
+input {
+	border:1px solid #ccc;
+}
+</style>
+<script>
+var hasEr = false;
+function ank(){
+	
+	var an = /^([a-zA-Z0-9 _-]+)$/;
+	var num = /^-{0,1}\d*\.{0,1}\d+$/;
+	var email = /^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$/; 
+	
+	var fnVal = document.getElementById("fName").value;
+	var lnVal = document.getElementById("lName").value;
+	var phn = document.getElementById("phn").value;
+	var eml = document.getElementById("email").value;
+	var emlC = document.getElementById("emailC").value;
+	
+	if(fnVal == ''){
+		alert('enter first name');
+		hasEr = false;
+		}
+	else if(fnVal != '' && !fnVal.match(an)){
+		alert('enter valid first name');
+		hasEr = false;
+		}
+		
+	else if(lnVal == ''){
+		alert('enter last name');
+		hasEr = false;
+		}
+	else if(lnVal != '' && !lnVal.match(an)){
+		alert('enter valid last name');
+		hasEr = false;
+		}
+
+	else if(phn == ''){
+		alert('enter phone number');
+		hasEr = false;
+		}
+	else if(phn != '' && !phn.match(num)){
+		alert('enter numeric data only');
+		hasEr = false;
+		}
+
+	else if(eml == ''){
+		alert('enter email address');
+		hasEr = false;
+		}
+	else if(eml != '' && !eml.match(email)){
+		alert('enter valid email data');
+		hasEr = false;
+		}
+
+	else if(emlC == ''){
+		alert('enter email confirm address');
+		hasEr = false;
+		}
+
+	else if(eml != emlC){
+		alert('enter valid  email confirm data');
+		hasEr = false;
+		}
+	else{
+		 alert('frm submit');
+		}
+	
+  }
+	
+	
+</script>
+</head>
+<body>
+<form name="frm" action="#">
+  <table width="500" border="1" cellspacing="0" cellpadding="0" align="center">
+    <tr>
+      <td>First name</td>
+      <td><input type="text" value="" id="fName" /></td>
+    </tr>
+    <tr>
+      <td>Last name</td>
+      <td><input type="text" value="" id="lName" /></td>
+    </tr>
+    <tr>
+      <td>Phone</td>
+      <td><input type="text" value="" id="phn" /></td>
+    </tr>
+    <tr>
+      <td>Email</td>
+      <td><input type="text" value="" id="email" /></td>
+    </tr>
+    <tr>
+      <td>Email Confirm</td>
+      <td><input type="text" value="" id="emailC" /></td>
+    </tr>
+    <tr>
+      <td>&nbsp;</td>
+      <td><input type="submit" value="Submit" onclick="ank();" /></td>
+    </tr>
+  </table>
+</form>
+</body>
+</html>
